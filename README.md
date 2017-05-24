@@ -28,7 +28,7 @@ $ pod install
 #### Library
 - [Alamofire](https://github.com/Alamofire/Alamofire) - Use for make simple request with server
 - [SwiflyJSON](https://github.com/SwiftyJSON/SwiftyJSON) - Parse JSON data in Swift
-- [Mapbox iOS SDK] - Mapbox SDK
+- Mapbox iOS SDK - Mapbox SDK
 
 
 ## License

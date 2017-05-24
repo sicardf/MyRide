@@ -15,7 +15,7 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
 
     private var mapboxView: MapboxView!
     private var searchAddressView: SearchAddressView!
-    private var apiKeyGoogle: String = ""
+    private let apiGoogle = APIGoogle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,6 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
     }
     
     private func setup() {
-        apiKeyGoogle = self.valueForAPIKey(named: "API_GOOGLE")
-        
         mapboxView = MapboxView(frame: view.frame)
         view.addSubview(mapboxView)
         
@@ -41,71 +39,29 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
     // MARK : SearchAddressDelegate
     
     func editTextField(address: String) {
-        getPlaceAutocomplete(address: address)
+        apiGoogle.getPlaceAutocomplete(address: address) { (success, data, error) in
+            if success {
+                self.searchAddressView.updateAutoCompletion(json: JSON(data!))
+            } else {
+                print(error!.localizedDescription as String)
+                self.view.endEditing(true)
+            }
+        }
     }
     
     func getAddressMap(address: String) {
-        getGeocodeLatlng(address: address)
+        apiGoogle.getGeocodeLatlng(address: address) { (success, data, error) in
+            if success {
+                let json = JSON(data!)
+                let lat: Double = json["results"][0]["geometry"]["location"]["lat"].doubleValue
+                let lng = json["results"][0]["geometry"]["location"]["lng"].doubleValue
+                self.mapboxView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                self.mapboxView.addPin()
+            } else {
+                print(error!.localizedDescription as String)
+            }
         self.view.endEditing(true)
-    }
-    
-    
-    private func valueForAPIKey(named keyname:String) -> String {
-        let filePath = Bundle.main.path(forResource: "Key", ofType: "plist")
-        let plist = NSDictionary(contentsOfFile:filePath!)
-        let value = plist?.object(forKey: keyname) as! String
-        return value
-    }
-    
-    func getPlaceAutocomplete(address: String) {
-        // Add URL parameters
-        let urlParams = [
-            "input": address,
-            "types":"geocode",
-            "language":"fr",
-            "key": apiKeyGoogle,
-            ]
-        
-        // Fetch Request
-        Alamofire.request("https://maps.googleapis.com/maps/api/place/autocomplete/json", method: .get, parameters: urlParams)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                if (response.result.error == nil) {
-                    self.searchAddressView.updateAutoCompletion(json: JSON(response.data!))
-                }
-                else {
-                    let error = response.result.error!.localizedDescription as String
-                    debugPrint(error)
-                }
         }
     }
-    
-    func getGeocodeLatlng(address: String) {
-        // Add URL parameters
-        let urlParams = [
-            "address": address,
-            "key": apiKeyGoogle,
-            ]
-        
-        // Fetch Request
-        Alamofire.request("https://maps.googleapis.com/maps/api/geocode/json", method: .get, parameters: urlParams)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                if (response.result.error == nil) {
-                    let json = JSON(response.data as Any)
-                    let lat: Double = json["results"][0]["geometry"]["location"]["lat"].doubleValue
-                    let lng = json["results"][0]["geometry"]["location"]["lng"].doubleValue
-                    self.mapboxView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                    self.mapboxView.addPin()
-                }
-                else {
-                    let error = response.result.error!.localizedDescription as String
-                    debugPrint(error)
-                }
-        }
-    }
-    
-    
-
 
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 import Mapbox
-import Alamofire
 import SwiftyJSON
 
 class MapsViewController: UIViewController, SearchAddressDelegate {
@@ -32,8 +31,13 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
         
         searchAddressView = SearchAddressView(frame: CGRect(x: 20, y: 30, width: self.view.frame.size.width - 40, height: 250))
         searchAddressView.delegate = self
-        searchAddressView.address = "12 route de la gare 13"
         view.addSubview(searchAddressView)
+    }
+    
+    private func alertView(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK : SearchAddressDelegate
@@ -43,24 +47,24 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
             if success {
                 self.searchAddressView.updateAutoCompletion(json: JSON(data!))
             } else {
-                print(error!.localizedDescription as String)
                 self.view.endEditing(true)
+                self.alertView(message: error!.localizedDescription as String)
             }
         }
     }
     
     func getAddressMap(address: String) {
         apiGoogle.getGeocodeLatlng(address: address) { (success, data, error) in
+            self.view.endEditing(true)
             if success {
                 let json = JSON(data!)
-                let lat: Double = json["results"][0]["geometry"]["location"]["lat"].doubleValue
+                let lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
                 let lng = json["results"][0]["geometry"]["location"]["lng"].doubleValue
                 self.mapboxView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
                 self.mapboxView.addPin()
             } else {
-                print(error!.localizedDescription as String)
+                self.alertView(message: error!.localizedDescription as String)
             }
-        self.view.endEditing(true)
         }
     }
 

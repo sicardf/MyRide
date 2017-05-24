@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchAddressView" customModule="MyRide" customModuleProvider="target">
+            <connections>
+                <outlet property="menuButton" destination="elj-14-ZRM" id="DRt-gs-bSY"/>
+                <outlet property="tableView" destination="ebz-YS-utf" id="R97-0F-xdn"/>
+                <outlet property="textField" destination="29o-fq-a84" id="NI4-3R-19j"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cYx-cM-bgL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="29o-fq-a84">
+                    <rect key="frame" x="45" y="0.0" width="330" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="PaX-MJ-J1c"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="1gV-VZ-33z"/>
+                    </connections>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ebz-YS-utf">
+                    <rect key="frame" x="0.0" y="40" width="375" height="210"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="04W-MK-jZb"/>
+                        <outlet property="delegate" destination="-1" id="IWU-97-YRW"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elj-14-ZRM">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="lFF-63-PPn"/>
+                        <constraint firstAttribute="height" constant="40" id="tNQ-Qq-Ras"/>
+                    </constraints>
+                    <state key="normal" image="menuIcon"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="29o-fq-a84" firstAttribute="leading" secondItem="elj-14-ZRM" secondAttribute="trailing" constant="5" id="EnQ-A9-RPJ"/>
+                <constraint firstItem="29o-fq-a84" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KSm-fd-KVe"/>
+                <constraint firstAttribute="bottom" secondItem="ebz-YS-utf" secondAttribute="bottom" id="QfE-Xj-3ga"/>
+                <constraint firstItem="ebz-YS-utf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Rtf-ml-Aga"/>
+                <constraint firstAttribute="trailing" secondItem="ebz-YS-utf" secondAttribute="trailing" id="XRr-2X-PKu"/>
+                <constraint firstItem="elj-14-ZRM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="csJ-Xd-dxy"/>
+                <constraint firstItem="elj-14-ZRM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="czP-Qr-aRs"/>
+                <constraint firstItem="ebz-YS-utf" firstAttribute="top" secondItem="29o-fq-a84" secondAttribute="bottom" id="gX7-HW-VHj"/>
+                <constraint firstItem="ebz-YS-utf" firstAttribute="top" secondItem="elj-14-ZRM" secondAttribute="bottom" id="lMb-uM-qco"/>
+                <constraint firstAttribute="trailing" secondItem="29o-fq-a84" secondAttribute="trailing" id="qJb-aX-nwx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.5" y="52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="menuIcon" width="40" height="40"/>
+    </resources>
+</document>

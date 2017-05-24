@@ -13,7 +13,10 @@ import CoreData
 
 class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
 
-    private var mapboxView: MapboxView!
+   // private var mapboxView: MapboxView!
+    private var mapView:MapView!
+    
+    
     private var searchAddressView: SearchAddressView!
     private let apiGoogle = APIGoogle()
     
@@ -32,9 +35,9 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
     }
     
     private func setup() {
-        mapboxView = MapboxView(frame: view.frame)
-        mapboxView.delegate = self
-        view.addSubview(mapboxView)
+        mapView = MapboxView(frame: view.frame) //MapboxView(frame: view.frame) - MapKitView(frame: view.frame)
+        mapView.delegate = self
+        view.addSubview(mapView)
         
         searchAddressView = SearchAddressView(frame: CGRect(x: 20, y: 30, width: self.view.frame.size.width - 40, height: 250))
         searchAddressView.delegate = self
@@ -104,8 +107,9 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
                 let lat = json["results"][0]["geometry"]["location"]["lat"].doubleValue
                 let lng = json["results"][0]["geometry"]["location"]["lng"].doubleValue
                 self.saveHistory(address: address, lat: String(lat), lng: String(lng))
-                self.mapboxView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                self.mapboxView.pinIsHidden = false
+                
+                self.mapView.changeCenterCoordinate(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+                self.mapView.displayPin()
             } else {
                 self.alertView(message: error!.localizedDescription as String)
             }
@@ -119,6 +123,7 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
     // MARK : MapDelegate
     
     func centerCoordinateMapChange(coordinate: CLLocationCoordinate2D) {
+        print("OCUOCUOC")
         let addressTmp = self.searchAddressView.address
         self.searchAddressView.address = "Update of location ..."
         apiGoogle.getGeocodeLatlng(lat: String(coordinate.latitude), lng: String(coordinate.longitude)) { (success, data, error) in
@@ -135,7 +140,9 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
     
     func updateLocation(address: String, lat: Double, lng: Double) {
         searchAddressView.address = address
-        self.mapboxView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        
+        self.mapView.changeCenterCoordinate(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+        self.mapView.displayPin()
     }
 
 }

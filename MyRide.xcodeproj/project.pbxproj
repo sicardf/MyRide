@@ -19,6 +19,8 @@
 		E31ABC0B1ED56EDD00966AC7 /* SearchAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */; };
 		E31ABC0D1ED59A5200966AC7 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC0C1ED59A5200966AC7 /* Key.plist */; };
 		E31ABC101ED5A17A00966AC7 /* APIGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */; };
+		E3BBAF0C1ED5E3A500D466DB /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBAF0B1ED5E3A500D466DB /* MapKitView.swift */; };
+		E3BBAF0E1ED5E9AC00D466DB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBAF0D1ED5E9AC00D466DB /* MapView.swift */; };
 		E3D1EE861ED5D59D00F43A28 /* MyRide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D1EE841ED5D59D00F43A28 /* MyRide.xcdatamodeld */; };
 		E3E3842A1ED5C36A0027C7A2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E384291ED5C36A0027C7A2 /* MenuView.swift */; };
 		E3E3842C1ED5C3950027C7A2 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3E3842B1ED5C3950027C7A2 /* MenuView.xib */; };
@@ -56,6 +58,8 @@
 		E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchAddressView.xib; path = UI/Maps/UIView/SearchAddressView.xib; sourceTree = "<group>"; };
 		E31ABC0C1ED59A5200966AC7 /* Key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIGoogle.swift; path = Helpers/APIGoogle.swift; sourceTree = "<group>"; };
+		E3BBAF0B1ED5E3A500D466DB /* MapKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapKitView.swift; path = UI/Maps/UIView/MapKitView.swift; sourceTree = "<group>"; };
+		E3BBAF0D1ED5E9AC00D466DB /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = UI/Maps/UIView/MapView.swift; sourceTree = "<group>"; };
 		E3D1EE851ED5D59D00F43A28 /* MyRide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyRide.xcdatamodel; sourceTree = "<group>"; };
 		E3E384291ED5C36A0027C7A2 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = UI/SideMenu/UIView/MenuView.swift; sourceTree = "<group>"; };
 		E3E3842B1ED5C3950027C7A2 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuView.xib; path = UI/SideMenu/UIView/MenuView.xib; sourceTree = "<group>"; };
@@ -167,7 +171,9 @@
 		E31ABBFF1ED5660500966AC7 /* UIVIew */ = {
 			isa = PBXGroup;
 			children = (
+				E3BBAF0D1ED5E9AC00D466DB /* MapView.swift */,
 				E31ABC071ED56E9C00966AC7 /* MapboxView.swift */,
+				E3BBAF0B1ED5E3A500D466DB /* MapKitView.swift */,
 				E31ABC061ED56E9C00966AC7 /* SearchAddressView.swift */,
 				E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */,
 			);
@@ -410,8 +416,10 @@
 				E3E3842A1ED5C36A0027C7A2 /* MenuView.swift in Sources */,
 				E31ABC091ED56E9C00966AC7 /* MapboxView.swift in Sources */,
 				E31ABBFE1ED565FD00966AC7 /* MapsViewController.swift in Sources */,
+				E3BBAF0C1ED5E3A500D466DB /* MapKitView.swift in Sources */,
 				E31ABC101ED5A17A00966AC7 /* APIGoogle.swift in Sources */,
 				E3D1EE861ED5D59D00F43A28 /* MyRide.xcdatamodeld in Sources */,
+				E3BBAF0E1ED5E9AC00D466DB /* MapView.swift in Sources */,
 				E3FFF3E01ED5B07900C67FBF /* SideMenuViewController.swift in Sources */,
 				E31ABBDC1ED564F600966AC7 /* AppDelegate.swift in Sources */,
 			);

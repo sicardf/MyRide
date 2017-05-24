@@ -14,7 +14,7 @@
 		E31ABBE61ED564F600966AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31ABBE41ED564F600966AC7 /* LaunchScreen.storyboard */; };
 		E31ABBF11ED564F700966AC7 /* MyRideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABBF01ED564F700966AC7 /* MyRideTests.swift */; };
 		E31ABBFE1ED565FD00966AC7 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABBFD1ED565FD00966AC7 /* MapsViewController.swift */; };
-		E31ABC011ED5676200966AC7 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC001ED5676200966AC7 /* test.storyboard */; };
+		E31ABC031ED56BE300966AC7 /* MapboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABC021ED56BE300966AC7 /* MapboxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		E31ABBF01ED564F700966AC7 /* MyRideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRideTests.swift; sourceTree = "<group>"; };
 		E31ABBF21ED564F700966AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E31ABBFD1ED565FD00966AC7 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapsViewController.swift; path = UI/Maps/MapsViewController.swift; sourceTree = "<group>"; };
-		E31ABC001ED5676200966AC7 /* test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
+		E31ABC021ED56BE300966AC7 /* MapboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapboxView.swift; path = UIView/MapboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,6 @@
 				E31ABBE21ED564F600966AC7 /* Assets.xcassets */,
 				E31ABBE41ED564F600966AC7 /* LaunchScreen.storyboard */,
 				E31ABBE71ED564F600966AC7 /* Info.plist */,
-				E31ABC001ED5676200966AC7 /* test.storyboard */,
 			);
 			path = MyRide;
 			sourceTree = "<group>";
@@ -148,6 +147,7 @@
 		E31ABBFF1ED5660500966AC7 /* UIVIew */ = {
 			isa = PBXGroup;
 			children = (
+				E31ABC021ED56BE300966AC7 /* MapboxView.swift */,
 			);
 			name = UIVIew;
 			sourceTree = "<group>";
@@ -244,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E31ABBE61ED564F600966AC7 /* LaunchScreen.storyboard in Resources */,
-				E31ABC011ED5676200966AC7 /* test.storyboard in Resources */,
 				E31ABBE31ED564F600966AC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E31ABBFE1ED565FD00966AC7 /* MapsViewController.swift in Sources */,
+				E31ABC031ED56BE300966AC7 /* MapboxView.swift in Sources */,
 				E31ABBDC1ED564F600966AC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

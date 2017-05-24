@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initWindows() {
         UIApplication.shared.statusBarStyle = .default
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        //self.window?.windowLevel = 0
         window?.rootViewController = MapsViewController()
         window?.makeKeyAndVisible()
     }

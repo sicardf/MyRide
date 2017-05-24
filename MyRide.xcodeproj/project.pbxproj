@@ -17,6 +17,7 @@
 		E31ABC081ED56E9C00966AC7 /* SearchAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABC061ED56E9C00966AC7 /* SearchAddressView.swift */; };
 		E31ABC091ED56E9C00966AC7 /* MapboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABC071ED56E9C00966AC7 /* MapboxView.swift */; };
 		E31ABC0B1ED56EDD00966AC7 /* SearchAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */; };
+		E31ABC0D1ED59A5200966AC7 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC0C1ED59A5200966AC7 /* Key.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E31ABC061ED56E9C00966AC7 /* SearchAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchAddressView.swift; path = UI/Maps/UIView/SearchAddressView.swift; sourceTree = "<group>"; };
 		E31ABC071ED56E9C00966AC7 /* MapboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapboxView.swift; path = UI/Maps/UIView/MapboxView.swift; sourceTree = "<group>"; };
 		E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchAddressView.xib; path = UI/Maps/UIView/SearchAddressView.xib; sourceTree = "<group>"; };
+		E31ABC0C1ED59A5200966AC7 /* Key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				E31ABBE21ED564F600966AC7 /* Assets.xcassets */,
 				E31ABBE41ED564F600966AC7 /* LaunchScreen.storyboard */,
 				E31ABBE71ED564F600966AC7 /* Info.plist */,
+				E31ABC0C1ED59A5200966AC7 /* Key.plist */,
 			);
 			path = MyRide;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31ABC0D1ED59A5200966AC7 /* Key.plist in Resources */,
 				E31ABBE61ED564F600966AC7 /* LaunchScreen.storyboard in Resources */,
 				E31ABBE31ED564F600966AC7 /* Assets.xcassets in Resources */,
 				E31ABC0B1ED56EDD00966AC7 /* SearchAddressView.xib in Resources */,

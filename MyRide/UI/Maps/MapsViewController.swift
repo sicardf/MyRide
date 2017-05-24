@@ -15,6 +15,7 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
 
     private var mapboxView: MapboxView!
     private var searchAddressView: SearchAddressView!
+    private var apiKeyGoogle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
     }
     
     private func setup() {
+        apiKeyGoogle = self.valueForAPIKey(named: "API_GOOGLE")
+        
         mapboxView = MapboxView(frame: view.frame)
         view.addSubview(mapboxView)
         
@@ -46,7 +49,12 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
     }
     
     
-    
+    private func valueForAPIKey(named keyname:String) -> String {
+        let filePath = Bundle.main.path(forResource: "Key", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile:filePath!)
+        let value = plist?.object(forKey: keyname) as! String
+        return value
+    }
     
     
     
@@ -56,7 +64,7 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
             "input": address,
             "types":"geocode",
             "language":"fr",
-            "key":"AIzaSyA_Xk2H8wE-EFouzOlN56U41U4pkl6-K5U",
+            "key": apiKeyGoogle,
             ]
         
         // Fetch Request
@@ -67,7 +75,8 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
                     self.searchAddressView.updateAutoCompletion(json: JSON(response.data!))
                 }
                 else {
-                    debugPrint("HTTP Request failed: \(response.result.error!)")
+                    let error = response.result.error!.localizedDescription as String
+                    debugPrint(error)
                 }
         }
     }
@@ -76,7 +85,7 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
         // Add URL parameters
         let urlParams = [
             "address": address,
-            "key":"AIzaSyA_Xk2H8wE-EFouzOlN56U41U4pkl6-K5U",
+            "key": apiKeyGoogle,
             ]
         
         // Fetch Request
@@ -91,7 +100,8 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
                     self.mapboxView.addPin()
                 }
                 else {
-                    debugPrint("HTTP Request failed: \(response.result.error!)")
+                    let error = response.result.error!.localizedDescription as String
+                    debugPrint(error)
                 }
         }
     }

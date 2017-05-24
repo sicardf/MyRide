@@ -34,6 +34,7 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
         
         searchAddressView = SearchAddressView(frame: CGRect(x: 20, y: 30, width: self.view.frame.size.width - 40, height: 250))
         searchAddressView.delegate = self
+        searchAddressView.address = "12 route de la gare 13"
         view.addSubview(searchAddressView)
     }
     
@@ -55,8 +56,6 @@ class MapsViewController: UIViewController, SearchAddressDelegate {
         let value = plist?.object(forKey: keyname) as! String
         return value
     }
-    
-    
     
     func getPlaceAutocomplete(address: String) {
         // Add URL parameters

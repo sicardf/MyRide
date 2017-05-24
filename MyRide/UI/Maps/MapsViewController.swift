@@ -16,6 +16,8 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
     private var searchAddressView: SearchAddressView!
     private let apiGoogle = APIGoogle()
     
+    private let controller = SideMenuViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -33,6 +35,17 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
         searchAddressView = SearchAddressView(frame: CGRect(x: 20, y: 30, width: self.view.frame.size.width - 40, height: 250))
         searchAddressView.delegate = self
         view.addSubview(searchAddressView)
+        
+        
+      print("BEFOOOORE0")
+        addChildViewController(self.controller)
+         print("BEFOOOORE1")
+        self.controller.view.frame = CGRect(x: -self.view.frame.size.width, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+         print("BEFOOOORE2")
+        view.addSubview(self.controller.view)
+         print("BEFOOOORE3")
+        self.controller.didMove(toParentViewController: self)
+        print("after")
     }
     
     private func alertView(message: String) {
@@ -63,10 +76,20 @@ class MapsViewController: UIViewController, SearchAddressDelegate, MapDelegate {
                 let lng = json["results"][0]["geometry"]["location"]["lng"].doubleValue
                 self.mapboxView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
                 self.mapboxView.pinIsHidden = false
+                
+                /*UIView.animate(withDuration: 0.5, animations: {
+                    self.controller.view.frame.origin.x = 0
+                }) { (bool) in
+                    print("FINISH")
+                }*/
             } else {
                 self.alertView(message: error!.localizedDescription as String)
             }
         }
+    }
+    
+    func displayMenu() {
+        self.controller.displayMenu()
     }
     
     // MARK : MapDelegate

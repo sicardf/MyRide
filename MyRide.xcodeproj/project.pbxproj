@@ -19,6 +19,9 @@
 		E31ABC0B1ED56EDD00966AC7 /* SearchAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */; };
 		E31ABC0D1ED59A5200966AC7 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E31ABC0C1ED59A5200966AC7 /* Key.plist */; };
 		E31ABC101ED5A17A00966AC7 /* APIGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */; };
+		E3E3842A1ED5C36A0027C7A2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E384291ED5C36A0027C7A2 /* MenuView.swift */; };
+		E3E3842C1ED5C3950027C7A2 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3E3842B1ED5C3950027C7A2 /* MenuView.xib */; };
+		E3FFF3E01ED5B07900C67FBF /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FFF3DF1ED5B07900C67FBF /* SideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		E31ABC0A1ED56EDD00966AC7 /* SearchAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchAddressView.xib; path = UI/Maps/UIView/SearchAddressView.xib; sourceTree = "<group>"; };
 		E31ABC0C1ED59A5200966AC7 /* Key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIGoogle.swift; path = Helpers/APIGoogle.swift; sourceTree = "<group>"; };
+		E3E384291ED5C36A0027C7A2 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = UI/SideMenu/UIView/MenuView.swift; sourceTree = "<group>"; };
+		E3E3842B1ED5C3950027C7A2 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuView.xib; path = UI/SideMenu/UIView/MenuView.xib; sourceTree = "<group>"; };
+		E3FFF3DF1ED5B07900C67FBF /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = UI/SideMenu/SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				E31ABBFC1ED565C600966AC7 /* Maps */,
+				E3FFF3DE1ED5B05400C67FBF /* SideMenu */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -170,6 +177,24 @@
 				E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E3FFF3DE1ED5B05400C67FBF /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E3FFF3DF1ED5B07900C67FBF /* SideMenuViewController.swift */,
+				E3FFF3E11ED5B1D300C67FBF /* UIView */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		E3FFF3E11ED5B1D300C67FBF /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				E3E384291ED5C36A0027C7A2 /* MenuView.swift */,
+				E3E3842B1ED5C3950027C7A2 /* MenuView.xib */,
+			);
+			name = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E31ABC0D1ED59A5200966AC7 /* Key.plist in Resources */,
+				E3E3842C1ED5C3950027C7A2 /* MenuView.xib in Resources */,
 				E31ABBE61ED564F600966AC7 /* LaunchScreen.storyboard in Resources */,
 				E31ABBE31ED564F600966AC7 /* Assets.xcassets in Resources */,
 				E31ABC0B1ED56EDD00966AC7 /* SearchAddressView.xib in Resources */,
@@ -378,9 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E31ABC081ED56E9C00966AC7 /* SearchAddressView.swift in Sources */,
+				E3E3842A1ED5C36A0027C7A2 /* MenuView.swift in Sources */,
 				E31ABC091ED56E9C00966AC7 /* MapboxView.swift in Sources */,
 				E31ABBFE1ED565FD00966AC7 /* MapsViewController.swift in Sources */,
 				E31ABC101ED5A17A00966AC7 /* APIGoogle.swift in Sources */,
+				E3FFF3E01ED5B07900C67FBF /* SideMenuViewController.swift in Sources */,
 				E31ABBDC1ED564F600966AC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

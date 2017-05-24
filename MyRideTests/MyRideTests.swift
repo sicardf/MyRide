@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SwiftyJSON
 @testable import MyRide
 
 class MyRideTests: XCTestCase {
@@ -24,6 +25,17 @@ class MyRideTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let apiGoogle = APIGoogle()
+        let expectedId = "f61ae52b5e603c5052cc1aec9f08768c86090aba"
+        
+        apiGoogle.getPlaceAutocomplete(address: "12 route de la gare 13570 Barbentane") { (success, data, error) in
+            if success {
+                let result = JSON(data!)["predictions"][0]["id"].stringValue
+                XCTAssert(result == expectedId)
+            } else {
+                
+            }
+        }
     }
     
     func testPerformanceExample() {

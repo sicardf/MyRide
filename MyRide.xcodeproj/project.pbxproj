@@ -21,6 +21,7 @@
 		E31ABC101ED5A17A00966AC7 /* APIGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */; };
 		E3BBAF0C1ED5E3A500D466DB /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBAF0B1ED5E3A500D466DB /* MapKitView.swift */; };
 		E3BBAF0E1ED5E9AC00D466DB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBAF0D1ED5E9AC00D466DB /* MapView.swift */; };
+		E3BBAF201ED5F36800D466DB /* APIGoogleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBAF1F1ED5F36800D466DB /* APIGoogleTests.swift */; };
 		E3D1EE861ED5D59D00F43A28 /* MyRide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D1EE841ED5D59D00F43A28 /* MyRide.xcdatamodeld */; };
 		E3E3842A1ED5C36A0027C7A2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E384291ED5C36A0027C7A2 /* MenuView.swift */; };
 		E3E3842C1ED5C3950027C7A2 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3E3842B1ED5C3950027C7A2 /* MenuView.xib */; };
@@ -29,6 +30,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		E31ABBED1ED564F700966AC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E31ABBD01ED564F600966AC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E31ABBD71ED564F600966AC7;
+			remoteInfo = MyRide;
+		};
+		E3BBAF1A1ED5F33900D466DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E31ABBD01ED564F600966AC7 /* Project object */;
 			proxyType = 1;
@@ -60,6 +68,8 @@
 		E31ABC0F1ED5A17A00966AC7 /* APIGoogle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIGoogle.swift; path = Helpers/APIGoogle.swift; sourceTree = "<group>"; };
 		E3BBAF0B1ED5E3A500D466DB /* MapKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapKitView.swift; path = UI/Maps/UIView/MapKitView.swift; sourceTree = "<group>"; };
 		E3BBAF0D1ED5E9AC00D466DB /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = UI/Maps/UIView/MapView.swift; sourceTree = "<group>"; };
+		E3BBAF151ED5F33900D466DB /* APIGoogleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIGoogleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3BBAF1F1ED5F36800D466DB /* APIGoogleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIGoogleTests.swift; sourceTree = "<group>"; };
 		E3D1EE851ED5D59D00F43A28 /* MyRide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyRide.xcdatamodel; sourceTree = "<group>"; };
 		E3E384291ED5C36A0027C7A2 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = UI/SideMenu/UIView/MenuView.swift; sourceTree = "<group>"; };
 		E3E3842B1ED5C3950027C7A2 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuView.xib; path = UI/SideMenu/UIView/MenuView.xib; sourceTree = "<group>"; };
@@ -80,6 +90,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1CF86A2C6FFD3CDFF5F5A33 /* Pods_MyRideTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BBAF121ED5F33900D466DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +139,7 @@
 			children = (
 				E31ABBD81ED564F600966AC7 /* MyRide.app */,
 				E31ABBEC1ED564F700966AC7 /* MyRideTests.xctest */,
+				E3BBAF151ED5F33900D466DB /* APIGoogleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E31ABBF01ED564F700966AC7 /* MyRideTests.swift */,
+				E3BBAF1F1ED5F36800D466DB /* APIGoogleTests.swift */,
 				E31ABBF21ED564F700966AC7 /* Info.plist */,
 			);
 			path = MyRideTests;
@@ -250,6 +269,24 @@
 			productReference = E31ABBEC1ED564F700966AC7 /* MyRideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E3BBAF141ED5F33900D466DB /* APIGoogleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3BBAF1C1ED5F33900D466DB /* Build configuration list for PBXNativeTarget "APIGoogleTests" */;
+			buildPhases = (
+				E3BBAF111ED5F33900D466DB /* Sources */,
+				E3BBAF121ED5F33900D466DB /* Frameworks */,
+				E3BBAF131ED5F33900D466DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3BBAF1B1ED5F33900D466DB /* PBXTargetDependency */,
+			);
+			name = APIGoogleTests;
+			productName = APIGoogleTests;
+			productReference = E3BBAF151ED5F33900D466DB /* APIGoogleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,6 +303,12 @@
 						ProvisioningStyle = Automatic;
 					};
 					E31ABBEB1ED564F700966AC7 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = CNXHV35VHD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E31ABBD71ED564F600966AC7;
+					};
+					E3BBAF141ED5F33900D466DB = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = CNXHV35VHD;
 						ProvisioningStyle = Automatic;
@@ -288,6 +331,7 @@
 			targets = (
 				E31ABBD71ED564F600966AC7 /* MyRide */,
 				E31ABBEB1ED564F700966AC7 /* MyRideTests */,
+				E3BBAF141ED5F33900D466DB /* APIGoogleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +350,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E31ABBEA1ED564F700966AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BBAF131ED5F33900D466DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,6 +481,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E31ABBF11ED564F700966AC7 /* MyRideTests.swift in Sources */,
+				E3BBAF201ED5F36800D466DB /* APIGoogleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BBAF111ED5F33900D466DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +499,11 @@
 			isa = PBXTargetDependency;
 			target = E31ABBD71ED564F600966AC7 /* MyRide */;
 			targetProxy = E31ABBED1ED564F700966AC7 /* PBXContainerItemProxy */;
+		};
+		E3BBAF1B1ED5F33900D466DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E31ABBD71ED564F600966AC7 /* MyRide */;
+			targetProxy = E3BBAF1A1ED5F33900D466DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -610,6 +674,34 @@
 			};
 			name = Release;
 		};
+		E3BBAF1D1ED5F33900D466DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = CNXHV35VHD;
+				INFOPLIST_FILE = APIGoogleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicardf.APIGoogleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyRide.app/MyRide";
+			};
+			name = Debug;
+		};
+		E3BBAF1E1ED5F33900D466DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = CNXHV35VHD;
+				INFOPLIST_FILE = APIGoogleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicardf.APIGoogleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyRide.app/MyRide";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -639,6 +731,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E3BBAF1C1ED5F33900D466DB /* Build configuration list for PBXNativeTarget "APIGoogleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BBAF1D1ED5F33900D466DB /* Debug */,
+				E3BBAF1E1ED5F33900D466DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

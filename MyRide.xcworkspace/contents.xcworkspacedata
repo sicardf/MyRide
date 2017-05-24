@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MyRideTests/APIGoogleTests.swift">
+   </FileRef>
+   <FileRef
       location = "group:MyRide.xcodeproj">
    </FileRef>
    <FileRef
